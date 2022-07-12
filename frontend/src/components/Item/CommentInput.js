@@ -42,7 +42,7 @@ class CommentInput extends React.Component {
         </div>
         <div className="card-footer">
           <img
-            src={this.props.currentUser.image}
+            src={this.props.currentUser.image || `${window.location.protocol}//${window.location.host}/placeholder.png`}
             className="user-pic mr-2"
             alt={this.props.currentUser.username}
           />
