@@ -146,6 +146,10 @@ router.post("/", auth.required, function(req, res, next) {
 
       var item = new Item(req.body.item);
 
+      if (!item.image) {
+        return res.sendStatus(400);
+      }
+
       item.seller = user;
 
       return item.save().then(function() {
